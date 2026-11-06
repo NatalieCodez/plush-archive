@@ -1,0 +1,872 @@
+
+/* ========================================
+   GLOBAL STYLES
+======================================== */
+
+:root {
+  font-family: 'Times New Roman', Times, serif, Helvetica, sans-serif;
+  color: #073483;
+  background: #4aaaf3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ========================================
+   MAIN SITE BACKGROUND
+======================================== */
+
+.site {
+  width: 100%;
+  height: 100dvh;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+
+  background: radial-gradient(
+    ellipse at 52% 48%,
+    #70c5ff 0%,
+    #46a8f0 75%,
+    #2f96e5 100%
+  );
+}
+
+/* Remove both decorative waves */
+
+.site::before,
+.site::after,
+.topbar::before,
+.topbar::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* ========================================
+   STRAIGHT HEADER
+======================================== */
+
+.topbar {
+  width: 100%;
+  height: 100px;
+  min-height: 100px;
+
+  background-color: #0754a6;
+
+  position: relative;
+  z-index: 5;
+
+  /* Remove wavy edges */
+  clip-path: none;
+  border-radius: 0;
+
+  /* Straight bottom edge */
+  border-bottom: none;
+  box-shadow: none;
+
+  flex-shrink: 0;
+}
+
+/* ========================================
+   HEADER INNER CONTAINER
+======================================== */
+
+.top-inner {
+  max-width: 1550px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 5%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* ========================================
+   ABOUT LINK
+======================================== */
+
+.about-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+
+/* ========================================
+   CENTERED HEADER LOGO
+======================================== */
+
+.brand {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+
+  min-width: 0;
+  z-index: 2;
+}
+
+/* Plush Archive text */
+
+.brand span {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+
+  color: #ffffff;
+  white-space: nowrap;
+
+  text-shadow: none;
+}
+
+/* Archive yellow accent */
+
+.brand em {
+  font-style: normal;
+  font-weight: 700;
+  color: #ffcf2e;
+}
+
+/* ========================================
+   MAIN HEADING
+======================================== */
+
+.hero h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+
+  color: #00388c;
+  margin: 0;
+}
+
+/* ========================================
+   SUBTITLE
+======================================== */
+
+.hero p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.5;
+
+  color: #164b89;
+  margin-top: 5px;
+}
+
+
+/* ========================================
+   HEADER ACTION ICONS
+======================================== */
+
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.top-actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  border: 0;
+  color: #ffffff;
+
+  cursor: pointer;
+}
+
+.top-actions svg {
+  width: 28px;
+  height: 28px;
+}
+
+.top-actions button.selected {
+  color: #ffcc2f;
+}
+
+/* ========================================
+   PAGE CONTAINER
+======================================== */
+
+.page {
+  width: 100%;
+  max-width: 1550px;
+  min-height: 0;
+  flex: 1;
+
+  margin: 0 auto;
+  padding: 0 16px;
+
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* ========================================
+   HERO SECTION
+======================================== */
+
+.hero {
+  height: 135px;
+  min-height: 135px;
+  flex-shrink: 0;
+
+  text-align: center;
+  position: relative;
+
+  padding: 16px 0 0;
+}
+
+/* ========================================
+   FIND A PLUSH HEADING
+======================================== */
+
+.hero h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 900;
+
+  color: #00388c;
+  letter-spacing: -1px;
+  line-height: 1.15;
+
+  margin: 0;
+}
+
+/* ========================================
+   HERO DECORATIONS
+======================================== */
+
+/* .hero-heart {
+  position: absolute;
+  left: 5%;
+  top: 10px;
+
+  font-size: 72px;
+  line-height: 1;
+
+  color: #ffe05b;
+  transform: rotate(-18deg);
+}
+
+.hero-paw {
+  position: absolute;
+  right: 3%;
+  top: 12px;
+
+  color: #0750a5;
+}
+*/
+
+/* ========================================
+   CATALOG LAYOUT
+======================================== */
+
+.catalog {
+  display: grid;
+  grid-template-columns: 275px minmax(0, 1fr);
+  gap: 27px;
+
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+
+  align-items: stretch;
+}
+
+/* ========================================
+   FILTER SIDEBAR
+======================================== */
+
+.filters {
+  background: #ffffff;
+  border-radius: 20px;
+
+  padding: 13px 17px 18px;
+
+  box-shadow: 0 5px 18px #0960a53b;
+  color: #052e7b;
+
+  min-height: 0;
+  max-height: 100%;
+  height: fit-content;
+
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+/* ========================================
+   FILTER TITLE
+======================================== */
+
+.filter-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 23px;
+  font-weight: 800;
+
+  padding-bottom: 12px;
+  border-bottom: 1px solid #c8d5e7;
+}
+
+/* ========================================
+   CLEAR FILTERS BUTTON
+======================================== */
+
+.filter-title button,
+.clear-filters {
+  margin-left: auto;
+
+  border: 1px solid #00449e;
+  background: #ffffff;
+  color: #00449e;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+
+  padding: 6px 12px;
+  border-radius: 10px;
+
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.filter-title button:hover,
+.clear-filters:hover {
+  background: #eaf4ff;
+}
+
+/* ========================================
+   FILTER SECTIONS
+======================================== */
+
+.filter-section {
+  border-bottom: 1px solid #cad5e4;
+  padding: 8px 2px 11px;
+}
+
+.filter-section:last-child {
+  border-bottom: 0;
+}
+
+.filter-section h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 17px;
+  font-weight: 800;
+
+  margin: 0 0 6px;
+}
+
+/* ========================================
+   CHECKBOX FILTERS
+======================================== */
+
+.check-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 15px;
+  line-height: 1.35;
+
+  cursor: pointer;
+  margin: 2px 0;
+}
+
+.check-line input {
+  width: 16px;
+  height: 16px;
+
+  accent-color: #0754a6;
+  cursor: pointer;
+}
+
+/* ========================================
+   COLOR SWATCHES
+======================================== */
+
+.swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+
+  padding: 5px 3px;
+}
+
+.swatch {
+  width: 25px;
+  height: 25px;
+
+  border-radius: 50%;
+  border: 1px solid #c3ccdc;
+
+  cursor: pointer;
+}
+
+.swatch.active {
+  outline: 3px solid #0c4d9e;
+  outline-offset: 2px;
+}
+
+/* ========================================
+   MAIN CATALOG AREA
+======================================== */
+
+.catalog-main {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+/* ========================================
+   SEARCH AND SORT CONTROLS
+======================================== */
+
+.catalog-controls {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+
+  flex-shrink: 0;
+  margin: 3px 0 18px;
+}
+
+/* ========================================
+   SEARCH BAR
+======================================== */
+
+.search-wrap {
+  height: 53px;
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  background: #ffffff;
+  border-radius: 40px;
+
+  padding: 0 23px;
+
+  color: #063e94;
+  box-shadow: 0 4px 10px #1769ad26;
+}
+
+.search-wrap input {
+  width: 100%;
+  min-width: 0;
+
+  border: 0;
+  outline: 0;
+
+  font-size: 17px;
+  color: #08377e;
+  background: transparent;
+}
+
+.search-wrap input::placeholder {
+  color: #3567a6;
+}
+
+/* ========================================
+   SORT DROPDOWN
+======================================== */
+
+.sort-wrap {
+  height: 47px;
+  min-width: 210px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  background: #ffffff;
+  border-radius: 40px;
+
+  padding: 0 13px;
+
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  color: #052e7b;
+}
+
+.sort-wrap select {
+  border: 0;
+  outline: 0;
+  appearance: none;
+
+  background: transparent;
+  color: #052e7b;
+
+  font-weight: 800;
+  max-width: 105px;
+
+  cursor: pointer;
+}
+
+/* ========================================
+   SCROLLABLE BEAR GALLERY
+======================================== */
+
+.gallery-scroll {
+  flex: 1;
+  min-height: 0;
+  height: auto;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding: 0 7px 15px 0;
+
+  scrollbar-width: thin;
+  scrollbar-color: #0753a3 #8dd0ff;
+
+  overscroll-behavior: contain;
+}
+
+/* ========================================
+   BEAR GRID
+======================================== */
+
+.bear-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 17px;
+}
+
+/* ========================================
+   INDIVIDUAL BEAR CARD
+======================================== */
+
+.bear-card {
+  position: relative;
+
+  background: #ffffff;
+  border-radius: 16px;
+
+  box-shadow: 0 5px 10px #07559b4a;
+
+  min-width: 0;
+  text-align: center;
+
+  padding: 9px 7px 8px;
+  overflow: hidden;
+}
+
+/* ========================================
+   FAVORITE HEART
+======================================== */
+
+.heart {
+  position: absolute;
+  right: 9px;
+  top: 8px;
+
+  border: 0;
+  background: transparent;
+  color: #003e97;
+
+  z-index: 2;
+  padding: 0;
+
+  cursor: pointer;
+}
+
+.heart.active {
+  color: #e9497c;
+}
+
+/* ========================================
+   BEAR IMAGE AREA
+======================================== */
+
+.bear-image {
+  height: 185px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bear-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  padding: 4px 10px;
+}
+
+/* ========================================
+   COMING SOON PLACEHOLDER
+======================================== */
+
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  color: #7096c0;
+}
+
+.placeholder span {
+  font-size: 65px;
+  filter: grayscale(0.5);
+  opacity: 0.6;
+}
+
+.placeholder small {
+  font-size: 10px;
+  font-weight: 800;
+}
+
+/* ========================================
+   BEAR NAME
+======================================== */
+
+.bear-info h3 {
+  font-size: 16px;
+  font-weight: 900;
+  color: #002e7e;
+
+  margin: 1px 0 3px;
+  line-height: 1.15;
+}
+
+/* ========================================
+   RELEASE YEAR
+======================================== */
+
+.bear-info > p {
+  font-size: 15px;
+  color: #0a347b;
+
+  margin: 0 0 5px;
+}
+
+/* ========================================
+   EXPANDABLE BEAR DETAILS
+======================================== */
+
+.bear-info details {
+  text-align: left;
+  font-size: 14px;
+  color: #43638e;
+
+  padding: 0 7px;
+}
+
+.bear-info summary {
+  cursor: pointer;
+  text-align: center;
+
+  color: #ffffff;
+  background: #0754a4;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  padding: 8px 12px;
+  border-radius: 10px;
+
+  list-style: none;
+  margin: 10px 8px 4px;
+}
+
+.bear-info summary::-webkit-details-marker {
+  display: none;
+}
+
+.bear-info summary:hover {
+  background: #003b8e;
+}
+
+.bear-info details p {
+  margin: 7px 0;
+}
+
+/* ========================================
+   EMPTY SEARCH RESULTS
+======================================== */
+
+.empty {
+  background: #ffffff;
+  border-radius: 16px;
+
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+  flex-shrink: 0;
+
+  text-align: center;
+  font-size: 11px;
+  color: #073f86;
+
+  padding: 8px 0 10px;
+
+  position: relative;
+  z-index: 1;
+}
+
+/* ========================================
+   RESPONSIVE: TABLET
+======================================== */
+
+@media (max-width: 1100px) {
+  .catalog {
+    grid-template-columns: 230px minmax(0, 1fr);
+    gap: 15px;
+  }
+
+  .bear-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ========================================
+   RESPONSIVE: MOBILE
+======================================== */
+
+@media (max-width: 760px) {
+  .topbar {
+    height: 85px;
+    min-height: 85px;
+  }
+
+  .brand span {
+    font-size: 27px;
+  }
+
+  .about-link {
+    font-size: 12px;
+  }
+
+  .top-actions {
+    gap: 8px;
+  }
+
+  .top-actions svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .hero {
+    height: 115px;
+    min-height: 115px;
+  }
+
+  .hero-heart,
+  .hero-paw {
+    display: none;
+  }
+
+  .catalog {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .filters {
+    max-height: 170px;
+    height: auto;
+  }
+
+  .catalog-controls {
+    gap: 10px;
+  }
+
+  .sort-wrap {
+    min-width: 150px;
+  }
+
+  .bear-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ========================================
+   RESPONSIVE: SMALL PHONES
+======================================== */
+
+@media (max-width: 420px) {
+  .brand span {
+    font-size: 23px;
+  }
+
+  .search-wrap {
+    padding: 0 12px;
+  }
+
+  .sort-wrap {
+    font-size: 11px;
+    min-width: 120px;
+  }
+
+  .bear-image {
+    height: 145px;
+  }
+
+  .bear-info h3 {
+    font-size: 14px;
+  }
+}

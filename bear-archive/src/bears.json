@@ -1,0 +1,146 @@
+
+[
+  {
+    "id": "035464",
+    "name": "Snowflake Kitty",
+    "year": 2026,
+    "type": "Cat",
+    "color": "Blue",
+    "collection": "Winter",
+    "image": "https://www.buildabear.com/dw/image/v2/BBNG_PRD/on/demandware.static/-/Sites-buildabear-master/default/dw13ead5bc/45260801135464~x20135020.jpg?sw=800&sh=800&sm=fit",
+    "description": "",
+    "source": "https://www.buildabear.com/snowflake-kitty-stuffed-animal/035464.html"
+  },
+  {
+    "id": "happy-hugs",
+    "name": "Happy Hugs Teddy",
+    "year": null,
+    "type": "Bear",
+    "color": "Brown",
+    "collection": "Classic",
+    "image": null,
+    "description": "Release information and photo pending verification.",
+    "source": ""
+  },
+  {
+    "id": "pawlette",
+    "name": "Pawlette",
+    "year": null,
+    "type": "Bunny",
+    "color": "Brown",
+    "collection": "Classic",
+    "image": null,
+    "description": "Release information and photo pending verification.",
+    "source": ""
+  },
+  {
+    "id": "timeless-teddy",
+    "name": "Timeless Teddy",
+    "year": null,
+    "type": "Bear",
+    "color": "Brown",
+    "collection": "Classic",
+    "image": null,
+    "description": "Release information and photo pending verification.",
+    "source": ""
+  },
+  {
+    "id": "spring-green-frog",
+    "name": "Spring Green Frog",
+    "year": null,
+    "type": "Frog",
+    "color": "Green",
+    "collection": "Seasonal",
+    "image": null,
+    "description": "Release information and photo pending verification.",
+    "source": ""
+  },
+  {
+    "id": "kuromi",
+    "name": "Kuromi",
+    "year": null,
+    "type": "Character",
+    "color": "Purple",
+    "collection": "Licensed",
+    "image": null,
+    "description": "Release information and photo pending verification.",
+    "source": ""
+  },
+  {
+    "id": "cinnamoroll",
+    "name": "Cinnamoroll",
+    "year": null,
+    "type": "Character",
+    "color": "White",
+    "collection": "Licensed",
+    "image": null,
+    "description": "Release information and photo pending verification.",
+    "source": ""
+  },
+  {
+    "id": "pokemon-pikachu",
+    "name": "Pikachu",
+    "year": null,
+    "type": "Character",
+    "color": "Yellow",
+    "collection": "Licensed",
+    "image": null,
+    "description": "Release information and photo pending verification.",
+    "source": ""
+  },
+  {
+    "id": "rainbow-bear",
+    "name": "Rainbow Bear",
+    "year": null,
+    "type": "Bear",
+    "color": "Multicolor",
+    "collection": "Special Edition",
+    "image": null,
+    "description": "Specific edition and release year need verification.",
+    "source": ""
+  },
+  {
+    "id": "polar-bear",
+    "name": "Polar Bear",
+    "year": null,
+    "type": "Bear",
+    "color": "White",
+    "collection": "Seasonal",
+    "image": null,
+    "description": "Specific edition and release year need verification.",
+    "source": ""
+  },
+  {
+    "id": "panda",
+    "name": "Panda",
+    "year": null,
+    "type": "Bear",
+    "color": "Black & White",
+    "collection": "Classic",
+    "image": null,
+    "description": "Specific edition and release year need verification.",
+    "source": ""
+  },
+  {
+    "id": "unicorn",
+    "name": "Unicorn",
+    "year": null,
+    "type": "Unicorn",
+    "color": "Multicolor",
+    "collection": "Fantasy",
+    "image": null,
+    "description": "Specific edition and release year need verification.",
+    "source": ""
+  },
+  {
+    "id": "puppy",
+    "name": "Puppy",
+    "year": null,
+    "type": "Dog",
+    "color": "Brown",
+    "collection": "Classic",
+    "image": null,
+    "description": "Specific edition and release year need verification.",
+    "source": ""
+  }
+]
