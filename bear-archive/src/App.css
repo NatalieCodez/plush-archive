@@ -688,8 +688,9 @@ body {
   flex: 1;
 }
 
+
 /* ========================================
-   BEAR NAME
+   PLUSH NAME
 ======================================== */
 
 .bear-info h3 {
@@ -697,11 +698,41 @@ body {
   font-weight: 900;
   color: #002e7e;
 
-  margin: 1px 0 3px;
-
   line-height: 1.2;
-  min-height: 2.4em;
+
+  /* Remove reserved blank space */
+  min-height: 0;
+
+  margin: 2px 0 4px;
 }
+
+/* ========================================
+   RELEASE YEAR
+======================================== */
+
+.bear-info > p {
+  font-size: 15px;
+  color: #0a347b;
+
+  margin: 0 0 10px;
+}
+
+/* ========================================
+   CARD INFORMATION
+======================================== */
+
+.bear-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Keep the Details button at the bottom */
+
+.bear-info .details-button {
+  margin-top: auto;
+}
+
 
 /* ========================================
    RELEASE YEAR
@@ -911,5 +942,232 @@ footer {
   text-align: left;
   font-size: 14px;
   color: #43638e;
+}
+
+
+/* ========================================
+   FIX PLUSH CARD ALIGNMENT
+======================================== */
+
+/* Keep every card the same height */
+
+.bear-card {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+  min-height: 310px;
+
+  position: relative;
+  overflow: visible;
+}
+
+/* Keep information neatly organized */
+
+.bear-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  position: relative;
+  min-height: 0;
+}
+
+/* Give every name the same amount of room */
+
+.bear-info h3 {
+  min-height: 42px;
+  margin: 2px 0 4px;
+
+  line-height: 1.2;
+}
+
+/* Remove unnecessary spacing */
+
+.bear-info > p {
+  margin: 0 0 8px;
+}
+
+/* Keep Details button at bottom */
+
+.bear-info details {
+  margin-top: auto;
+  padding: 0;
+
+  position: relative;
+}
+
+/* Details button styling */
+
+.bear-info summary {
+  display: block;
+
+  width: 100%;
+  padding: 10px 12px;
+  margin: 0;
+
+  background: #0754a4;
+  color: #ffffff;
+
+  border-radius: 10px;
+
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+
+  cursor: pointer;
+  list-style: none;
+}
+
+/* Hide default triangle */
+
+.bear-info summary::marker {
+  content: "";
+}
+
+.bear-info summary::-webkit-details-marker {
+  display: none;
+}
+
+/* ========================================
+   EXPANDED DETAILS
+======================================== */
+
+/* Show descriptions without resizing cards */
+
+.bear-info details[open] > :not(summary) {
+  position: absolute;
+
+  top: calc(100% + 6px);
+  left: 0;
+
+  width: 100%;
+
+  background: #ffffff;
+  color: #073483;
+
+  padding: 12px;
+
+  border: 1px solid #d5e4f4;
+  border-radius: 10px;
+
+  box-shadow: 0 5px 15px #003b8e30;
+
+  z-index: 10;
+}
+
+/* Keep expanded details above nearby cards */
+
+.bear-card:has(details[open]) {
+  z-index: 20;
+}
+
+
+/* ========================================
+   PLUSH CARD SPACING
+======================================== */
+
+.bear-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.bear-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* No forced blank space below names */
+
+.bear-info h3 {
+  min-height: 0;
+  margin: 2px 0 4px;
+}
+
+/* Release year */
+
+.bear-info > p {
+  margin: 0 0 10px;
+}
+
+/* Details button */
+
+.details-button {
+  display: block;
+  width: 100%;
+
+  margin-top: auto;
+  padding: 10px 12px;
+
+  background: #0754a4;
+  color: #ffffff;
+
+  border-radius: 10px;
+
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+}
+
+.details-button:hover {
+  background: #003b8e;
+  color: #ffffff;
+}
+
+
+/* ========================================
+   COLLAPSIBLE FILTER HEADINGS
+======================================== */
+
+.filter-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+
+  padding: 4px 0 8px;
+
+  background: transparent;
+  border: none;
+
+  color: #052e7b;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  text-align: left;
+
+  cursor: pointer;
+}
+
+/* Arrow */
+
+.filter-heading svg {
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+/* Hover */
+
+.filter-heading:hover {
+  color: #0754a6;
+}
+
+/* Keyboard accessibility */
+
+.filter-heading:focus-visible {
+  outline: 2px solid #0754a6;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Filter content */
+
+.filter-options {
+  padding-bottom: 3px;
 }
 

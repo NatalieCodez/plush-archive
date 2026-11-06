@@ -1,13 +1,329 @@
-import React from 'react';
-import { SlidersHorizontal, ChevronUp } from 'lucide-react';
-const colors=[['Brown','#bd8b62'],['White','#ffffff'],['Pink','#ff8fb5'],['Purple','#9365ca'],['Blue','#278bdf'],['Red','#e50032'],['Yellow','#ffc83b'],['Green','#19a36d'],['Black & White','#35465b'],['Multicolor','conic-gradient(#ff75ab,#ffd43b,#54c7e9,#9c66d4,#ff75ab)']];
-const groups=[['Classic Bears','Bear'],['Animals','Bunny'],['Characters','Character'],['Seasonal','Seasonal'],['Limited Edition','Limited Edition']];
-export default function BearFilters({filters,setFilters,clear}){
- const toggle=(key,val)=>setFilters(prev=>({...prev,[key]:prev[key].includes(val)?prev[key].filter(v=>v!==val):[...prev[key],val]}));
- return <aside className="filters"><div className="filter-title"><SlidersHorizontal size={23}/><strong>Filters</strong><button onClick={clear}>Clear</button></div>
- <div className="filter-section"><h3>Year <ChevronUp size={16}/></h3>{['2026','2025','2024','2023','2022','Older','Unknown'].map(y=><label className="check-line" key={y}><input type="checkbox" checked={filters.years.includes(y)} onChange={()=>toggle('years',y)}/>{y}</label>)}</div>
- <div className="filter-section"><h3>Plush Type <ChevronUp size={16}/></h3>{groups.map(([label,val])=><label className="check-line" key={label}><input type="checkbox" checked={filters.types.includes(val)} onChange={()=>toggle('types',val)}/>{label}</label>)}</div>
- <div className="filter-section"><h3>Color <ChevronUp size={16}/></h3><div className="swatches">{colors.map(([name,background])=><button key={name} className={'swatch '+(filters.colors.includes(name)?'active':'')} title={name} aria-label={'Filter color '+name} aria-pressed={filters.colors.includes(name)} style={{background}} onClick={()=>toggle('colors',name)}/>)}</div></div>
- <div className="filter-section"><h3>Size <ChevronUp size={16}/></h3>{[['Small (12 in)','Small'],['Medium (16 in)','Medium'],['Large (20 in)','Large']].map(([label,val])=><label className="check-line" key={val}><input type="checkbox" checked={filters.sizes.includes(val)} onChange={()=>toggle('sizes',val)}/>{label}</label>)}</div>
- </aside>;
+
+import React, { useState } from 'react';
+import { ChevronDown } from 'lucide-react';
+
+/* ========================================
+   FILTER OPTIONS
+======================================== */
+
+const yearOptions = [
+  '2026',
+  '2025',
+  '2024',
+  '2023',
+  '2022',
+  'Older',
+  'Unknown'
+];
+
+const typeOptions = [
+  'Bear',
+  'Bunny',
+  'Cat',
+  'Dog',
+  'Frog',
+  'Fox',
+  'Bat',
+  'Chinchilla',
+  'Llama',
+  'Character',
+  'Unicorn'
+];
+
+const colorOptions = [
+  { name: 'Brown', color: '#b98b68' },
+  { name: 'White', color: '#ffffff' },
+  { name: 'Pink', color: '#f77eae' },
+  { name: 'Purple', color: '#9564c8' },
+  { name: 'Blue', color: '#278de0' },
+  { name: 'Red', color: '#e90040' },
+  { name: 'Yellow', color: '#ffd04b' },
+  { name: 'Green', color: '#15a275' },
+  { name: 'Black', color: '#33465e' },
+  {
+    name: 'Multicolor',
+    color: 'conic-gradient(red, yellow, green, blue, violet, red)'
+  }
+];
+
+const sizeOptions = [
+  'Mini',
+  'Regular',
+  'Large'
+];
+
+
+/* ========================================
+   FILTER COMPONENT
+======================================== */
+
+export default function BearFilters({
+  bears,
+  filters,
+  setFilters,
+  clear
+}) {
+
+  // Track which filter sections are expanded
+  const [expanded, setExpanded] = useState({
+    years: true,
+    types: true,
+    colors: true,
+    sizes: true
+  });
+
+
+  /* ========================================
+     TOGGLE FILTER SECTION
+  ======================================== */
+
+  const toggleSection = (section) => {
+
+    setExpanded((previous) => ({
+      ...previous,
+      [section]: !previous[section]
+    }));
+
+  };
+
+
+  /* ========================================
+     TOGGLE SELECTED FILTER
+  ======================================== */
+
+  const toggleFilter = (category, value) => {
+
+    setFilters((previous) => {
+
+      const current = previous[category];
+
+      const updated = current.includes(value)
+        ? current.filter((item) => item !== value)
+        : [...current, value];
+
+      return {
+        ...previous,
+        [category]: updated
+      };
+
+    });
+
+  };
+  
+/* ========================================
+   FILTER DROPDOWN HEADING
+======================================== */
+
+const FilterHeading = ({ title, section }) => (
+
+  <button
+    type="button"
+    className="filter-heading"
+    onClick={() => toggleSection(section)}
+    aria-expanded={expanded[section]}
+  >
+
+    <span>
+      {title}
+    </span>
+
+    <ChevronDown size={18} />
+
+  </button>
+
+);
+
+  /* ========================================
+     RENDER FILTERS
+  ======================================== */
+
+  return (
+
+    <aside className="filters">
+
+      {/* FILTER TITLE */}
+
+      <div className="filter-title">
+
+        <strong>Filters</strong>
+
+        <button
+          type="button"
+          onClick={clear}
+        >
+          Clear
+        </button>
+
+      </div>
+
+
+      {/* ========================================
+          YEAR FILTER
+      ======================================== */}
+
+      <section className="filter-section">
+
+        <FilterHeading
+          title="Year"
+          section="years"
+        />
+
+        {expanded.years && (
+
+          <div className="filter-options">
+
+            {yearOptions.map((year) => (
+
+              <label
+                key={year}
+                className="check-line"
+              >
+
+                <input
+                  type="checkbox"
+                  checked={filters.years.includes(year)}
+                  onChange={() => toggleFilter('years', year)}
+                />
+
+                <span>{year}</span>
+
+              </label>
+
+            ))}
+
+          </div>
+
+        )}
+
+      </section>
+
+
+      {/* ========================================
+          PLUSH TYPE FILTER
+      ======================================== */}
+
+      <section className="filter-section">
+
+        <FilterHeading
+          title="Plush Type"
+          section="types"
+        />
+
+        {expanded.types && (
+
+          <div className="filter-options">
+
+            {typeOptions.map((type) => (
+
+              <label
+                key={type}
+                className="check-line"
+              >
+
+                <input
+                  type="checkbox"
+                  checked={filters.types.includes(type)}
+                  onChange={() => toggleFilter('types', type)}
+                />
+
+                <span>{type}</span>
+
+              </label>
+
+            ))}
+
+          </div>
+
+        )}
+
+      </section>
+
+
+      {/* ========================================
+          COLOR FILTER
+      ======================================== */}
+
+      <section className="filter-section">
+
+        <FilterHeading
+          title="Color"
+          section="colors"
+        />
+
+        {expanded.colors && (
+
+          <div className="swatches">
+
+            {colorOptions.map((color) => (
+
+              <button
+                key={color.name}
+                type="button"
+                className={
+                  filters.colors.includes(color.name)
+                    ? 'swatch active'
+                    : 'swatch'
+                }
+                style={{
+                  background: color.color
+                }}
+                title={color.name}
+                aria-label={`Filter by ${color.name}`}
+                aria-pressed={filters.colors.includes(color.name)}
+                onClick={() => toggleFilter('colors', color.name)}
+              />
+
+            ))}
+
+          </div>
+
+        )}
+
+      </section>
+
+
+      {/* ========================================
+          SIZE FILTER
+      ======================================== */}
+
+      <section className="filter-section">
+
+        <FilterHeading
+          title="Size"
+          section="sizes"
+        />
+
+        {expanded.sizes && (
+
+          <div className="filter-options">
+
+            {sizeOptions.map((size) => (
+
+              <label
+                key={size}
+                className="check-line"
+              >
+
+                <input
+                  type="checkbox"
+                  checked={filters.sizes.includes(size)}
+                  onChange={() => toggleFilter('sizes', size)}
+                />
+
+                <span>{size}</span>
+
+              </label>
+
+            ))}
+
+          </div>
+
+        )}
+
+      </section>
+
+    </aside>
+
+  );
+
 }
