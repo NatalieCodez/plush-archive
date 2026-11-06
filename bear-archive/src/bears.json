@@ -11,28 +11,40 @@
     "description": "",
     "source": "https://www.buildabear.com/snowflake-kitty-stuffed-animal/035464.html"
   },
-  {
-    "id": "happy-hugs",
-    "name": "Happy Hugs Teddy",
+  
+    {
+    "id": "chinchillin-chinchilla",
+    "name": "Chinchillin' Chinchilla",
     "year": null,
-    "type": "Bear",
-    "color": "Brown",
-    "collection": "Classic",
-    "image": null,
-    "description": "Release information and photo pending verification.",
+    "type": "Chinchilla",
+    "color": "Gray",
+    "collection": "Animals",
+    "image": "https://www.buildabear.com/dw/image/v2/BBNG_PRD/on/demandware.static/-/Sites-buildabear-master/default/dw236c2bf5/29260801135431~x20111028.jpg?sw=800&sh=800&sm=fit",
+    "description": "",
     "source": ""
-  },
-  {
-    "id": "pawlette",
-    "name": "Pawlette",
+    },
+    {
+    "id": "fa-la-la-llama",
+    "name": "Fa La La Llama Stuffed Animal with Scarf",
     "year": null,
-    "type": "Bunny",
-    "color": "Brown",
-    "collection": "Classic",
-    "image": null,
-    "description": "Release information and photo pending verification.",
+    "type": "Llama",
+    "color": "White",
+    "collection": "Seasonal",
+    "image": "https://www.buildabear.com/dw/image/v2/BBNG_PRD/on/demandware.static/-/Sites-buildabear-master/default/dw71e64165/38261530635540_35515~x20038104.jpg?sw=800&sh=800&sm=fit",
+    "description": "",
     "source": ""
-  },
+    },
+    {
+    "id": "nine-tailed-kitsune",
+    "name": "Nine-tailed Kitsune Fox",
+    "year": null,
+    "type": "Fox",
+    "color": "Multicolor",
+    "collection": "Fantasy",
+    "image": "https://www.buildabear.com/dw/image/v2/BBNG_PRD/on/demandware.static/-/Sites-buildabear-master/default/dwc9880258/01250700834916~x20047103.jpg?sw=800&sh=800&sm=fit",
+    "description": "",
+    "source": ""
+    },
   {
     "id": "timeless-teddy",
     "name": "Timeless Teddy",

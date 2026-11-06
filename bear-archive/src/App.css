@@ -594,12 +594,17 @@ body {
 .bear-card {
   position: relative;
 
+  display: flex;
+  flex-direction: column;
+
   background: #ffffff;
   border-radius: 16px;
 
   box-shadow: 0 5px 10px #07559b4a;
 
   min-width: 0;
+  height: 100%;
+
   text-align: center;
 
   padding: 9px 7px 8px;
@@ -673,6 +678,15 @@ body {
   font-size: 10px;
   font-weight: 800;
 }
+/* ========================================
+   BEAR INFORMATION CONTAINER
+======================================== */
+
+.bear-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
 
 /* ========================================
    BEAR NAME
@@ -684,7 +698,9 @@ body {
   color: #002e7e;
 
   margin: 1px 0 3px;
-  line-height: 1.15;
+
+  line-height: 1.2;
+  min-height: 2.4em;
 }
 
 /* ========================================
@@ -703,42 +719,14 @@ body {
 ======================================== */
 
 .bear-info details {
+  margin-top: auto;
+
   text-align: left;
   font-size: 14px;
   color: #43638e;
 
   padding: 0 7px;
 }
-
-.bear-info summary {
-  cursor: pointer;
-  text-align: center;
-
-  color: #ffffff;
-  background: #0754a4;
-
-  font-size: 15px;
-  font-weight: 700;
-
-  padding: 8px 12px;
-  border-radius: 10px;
-
-  list-style: none;
-  margin: 10px 8px 4px;
-}
-
-.bear-info summary::-webkit-details-marker {
-  display: none;
-}
-
-.bear-info summary:hover {
-  background: #003b8e;
-}
-
-.bear-info details p {
-  margin: 7px 0;
-}
-
 /* ========================================
    EMPTY SEARCH RESULTS
 ======================================== */
@@ -870,3 +858,58 @@ footer {
     font-size: 14px;
   }
 }
+
+
+/* ========================================
+   DETAILS BUTTON
+======================================== */
+
+.bear-info summary {
+  display: block;
+  width: 100%;
+
+  background-color: #0754a4;
+  color: #ffffff;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+
+  padding: 10px 12px;
+  margin: 0;
+
+  border: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+  list-style: none;
+}
+
+/* Remove default disclosure arrow */
+
+.bear-info summary::marker {
+  content: "";
+}
+
+.bear-info summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Hover effect */
+
+.bear-info summary:hover {
+  background-color: #003b8e;
+}
+
+/* Keep button at bottom of card */
+
+.bear-info details {
+  margin-top: auto;
+  padding: 0 7px;
+
+  text-align: left;
+  font-size: 14px;
+  color: #43638e;
+}
+
